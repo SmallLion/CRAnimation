@@ -27,41 +27,34 @@
     [super viewDidLoad];
     
     [self createUI];
-    [self addTopBar];
+    [self addTopBarWithTitle:@"CRImageGradient"];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
     [self start];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    [self finishTimer];
 }
 
 - (void)createUI
 {
-    _indexNow = -1;
-    _imageNameArray = @[@"TestImage_1",
-                        @"TestImage_2",
-                        @"TestImage_3",
-                        @"TestImage_4",
-                        @"TestImage_5",
-                        @"TestImage_6",
-                        @"TestImage_7",
-                        @"TestImage_8",
-                        @"TestImage_9",
-                        @"TestImage_10",
-                        @"TestImage_11",
-                        @"TestImage_12",
-                        @"TestImage_13",
-                        @"TestImage_14",
-                        @"TestImage_15",
-                        @"TestImage_16",
-                        @"TestImage_17",
-                        @"TestImage_18"];
+    [super createUI];
     
-    _imageGradientView = [[CRImageGradientView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT)];
+    _indexNow = -1;
+    _imageNameArray = @[@"S0002TestImage_1",
+                        @"S0002TestImage_2",
+                        @"S0002TestImage_3",
+                        ];
+    
+    _imageGradientView = [[CRImageGradientView alloc] initWithFrame:self.contentView.bounds];
     _imageGradientView.animationDuration_EX = 1.0f;
-    [self.view addSubview:_imageGradientView];
+    [self.contentView addSubview:_imageGradientView];
     
     [self createTimer];
 }

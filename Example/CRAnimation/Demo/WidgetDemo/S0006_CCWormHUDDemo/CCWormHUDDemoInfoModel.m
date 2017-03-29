@@ -22,14 +22,11 @@
     
     self.originGitHubAddress            = @"https://github.com/BearRan/CRAnimation";
     self.homePage                       = @"https://github.com/BearRan/CRAnimation";
-    self.authorInfo                     = self.authorInfo;
-    self.UIDesignerInfo                 = self.UIDesignerInfo;
-    
 }
 
-- (CRStaffInfoModel *)authorInfo
+- (CRMemberInfoModel *)authorInfo
 {
-    CRStaffInfoModel *authorInfo = [CRStaffInfoModel new];
+    CRMemberInfoModel *authorInfo = [CRMemberInfoModel new];
     authorInfo.realName = @"Cocos";
     authorInfo.nickName = @"C";
     authorInfo.mail     = @"543314602@qq.com";

@@ -37,15 +37,14 @@
     self.codeLanguage   = kCRLanguageTypeSwift;
     
     self.originGitHubAddress            = @"https://github.com/631106979/WCLLoadingView";
-    self.homePage                       = @"";
-    self.authorInfo                     = self.authorInfo;
-    self.UIDesignerInfo                 = self.UIDesignerInfo;
+    self.homePage                       = @"https://imwcl.com";
+
     
 }
 
-- (CRStaffInfoModel *)authorInfo
+- (CRMemberInfoModel *)authorInfo
 {
-    CRStaffInfoModel *authorInfo = [CRStaffInfoModel new];
+    CRMemberInfoModel *authorInfo = [CRMemberInfoModel new];
     authorInfo.realName = @"";
     authorInfo.nickName = @"WCL";
     authorInfo.mail     = @"wangchonhlei93@icloud.com";

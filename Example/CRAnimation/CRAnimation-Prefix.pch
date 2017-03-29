@@ -17,5 +17,6 @@
 
 #import "UIView+BearSet.h"
 #import "BearConstants.h"
-#import "CRBaseViewController.h"
 #import "CRDefines.h"
+#import "CRConstants.h"
+#import "CRCommon.h"

@@ -7,16 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CRStaffInfoModel.h"
+#import "CRMemberInfoModel.h"
+#import "CRProductsMemberBriefInfoModel.h"
 
 typedef enum {
-    kCRDemoTypeStorage,       //  动效仓库
-    kCRDemoTypeCombination,   //  组合动效
+    kCRDemoTypeStorage      = 1,    //  动效仓库
+    kCRDemoTypeCombination  = 2,    //  组合动效
+    kCRDemoTypeDesigner     = 3,    //  设计师动效
 } CRDemoType;
 
 typedef enum {
-    kCRLanguageTypeObjectiveC,  //  Objective-C
-    kCRLanguageTypeSwift,       //  Swift
+    kCRLanguageTypeObjectiveC = 1,  //  Objective-C
+    kCRLanguageTypeSwift      = 2,  //  Swift
 } CRLanguage;
 
 @interface CRDemoInfoModel : NSObject
@@ -31,15 +33,17 @@ typedef enum {
 @property (strong, nonatomic) NSString      *demoGifName;
 
 //  Require
-//  动效类型
+//  动效类型（默认填写：kCRDemoTypeStorage）
 //  kCRDemoTypeStorage:         动效仓库
 //  kCRDemoTypeCombination:     组合动效
+//  kCRDemoTypeDesigner:        设计师动效
 @property (assign, nonatomic) CRDemoType    demoType;
 
 //  Require
-//  ID编号
+//  ID编号（向管理员申请）
 //  S0001:动效仓库
 //  C0001:组合动效
+//  D0001:设计师动效
 @property (strong, nonatomic) NSString      *CRID;
 
 //  Require
@@ -49,6 +53,14 @@ typedef enum {
 //  Require
 //  动效简介
 @property (strong, nonatomic) NSString      *demoSummary;
+
+//  Require
+//  动效详情
+@property (strong, nonatomic) NSString      *detailDesc;
+
+//  Require
+//  语言(字符串类型)
+@property (assign, nonatomic) NSString      *language;
 
 //  Require
 //  语言
@@ -63,14 +75,19 @@ typedef enum {
 //  主页／该demo其他相关介绍文章地址，如csdn，简书，blog地址
 @property (strong, nonatomic) NSString      *homePage;
 
-//  Require
-//  作者信息
-@property (strong, nonatomic) CRStaffInfoModel      *authorInfo;
+//  Optional
+//  出处地址
+@property (strong, nonatomic) NSString      *referenceAddress;
 
 //  Optional
-//  UI设计师信息
-@property (strong, nonatomic) CRStaffInfoModel      *UIDesignerInfo;
+//  Gif地址
+@property (strong, nonatomic) NSString      *gifAddress;
 
+//  数据库用id
+@property (strong, nonatomic) NSNumber  *animationId;
+
+@property (strong, nonatomic) NSArray <CRProductsMemberBriefInfoModel *> *developAuthors;
+@property (strong, nonatomic) NSArray <CRProductsMemberBriefInfoModel *> *designAuthors;
 
 - (void)fillDemoInfo;
 

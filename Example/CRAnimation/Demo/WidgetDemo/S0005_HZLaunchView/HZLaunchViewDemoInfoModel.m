@@ -22,14 +22,13 @@
     
     self.originGitHubAddress            = @"https://github.com/zzgo/TwitterLaunchDemo";
     self.homePage                       = @"";
-    self.authorInfo                     = self.authorInfo;
-    self.UIDesignerInfo                 = self.UIDesignerInfo;
+
     
 }
 
-- (CRStaffInfoModel *)authorInfo
+- (CRMemberInfoModel *)authorInfo
 {
-    CRStaffInfoModel *authorInfo = [CRStaffInfoModel new];
+    CRMemberInfoModel *authorInfo = [CRMemberInfoModel new];
     authorInfo.realName = @"";
     authorInfo.nickName = @"zzgo";
     authorInfo.mail     = @"zzgocc@gmail.com";

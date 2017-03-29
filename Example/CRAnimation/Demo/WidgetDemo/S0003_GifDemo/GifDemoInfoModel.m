@@ -22,14 +22,13 @@
     
     self.originGitHubAddress            = @"https://github.com/Flipboard/FLAnimatedImage";
     self.homePage                       = @"https://github.com/Flipboard/FLAnimatedImage";
-    self.authorInfo                     = self.authorInfo;
-    self.UIDesignerInfo                 = self.UIDesignerInfo;
+
     
 }
 
-- (CRStaffInfoModel *)authorInfo
+- (CRMemberInfoModel *)authorInfo
 {
-    CRStaffInfoModel *authorInfo = [CRStaffInfoModel new];
+    CRMemberInfoModel *authorInfo = [CRMemberInfoModel new];
     authorInfo.realName = @"";
     authorInfo.nickName = @"Flipboard";
     authorInfo.mail     = @"";

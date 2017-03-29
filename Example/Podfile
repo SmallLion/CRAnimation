@@ -4,7 +4,15 @@ target 'CRAnimation_Example' do
   pod 'CRAnimation',        :path => '../'
   pod 'FLAnimatedImage',    '~> 1.0'
   pod 'YLGIFImage'
-  
+  pod 'SDWebImage'
+  pod 'AFNetworking'
+  pod 'MJExtension'
+  pod 'MBProgressHUD'
+  pod 'JHUD'
+  pod 'WCLShineButton'
+  pod 'RxWebViewController'
+  pod 'BearSkill', :git => 'https://github.com/BearRan/BearSkill.git', :commit => '81b9c9a'
+
   target 'CRAnimation_Tests' do
     inherit! :search_paths
 
